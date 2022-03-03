@@ -1,60 +1,59 @@
-#ifndef BIG_INTEGER_HPP
-#define BIG_INTEGER_HPP
+#pragma once
 
 #include <vector>
 #include <string>
 
 class BigInteger {
+private:
     std::vector<int> num;
 public:
-    BigInteger(int& val);
-    BigInteger(std::string& str);
+    BigInteger(const int& val);
+    BigInteger(const std::string& str);
 
-    BigInteger operator+(BigInteger& val);
-    BigInteger operator-(BigInteger& val);
-    BigInteger operator*(BigInteger& val);
-    BigInteger operator/(BigInteger& val);
-    BigInteger operator%(BigInteger& val);
+    const BigInteger operator+(const BigInteger& val);
+    const BigInteger operator-(const BigInteger& val);
+    const BigInteger operator*(const BigInteger& val);
+    const BigInteger operator/(const BigInteger& val);
+    const BigInteger operator%(const BigInteger& val);
 
-    bool operator <(BigInteger& val);
-    bool operator >(BigInteger& val);
-    bool operator ==(BigInteger& val);
-    BigInteger operator+();
+    const bool operator <(const BigInteger& val);
+    const bool operator >(const BigInteger& val);
+    const bool operator ==(const BigInteger& val);
+
+    const BigInteger operator+();
     BigInteger operator-();
 
-    BigInteger operator+=(BigInteger& val);
-    BigInteger operator-=(BigInteger& val);
-    BigInteger operator*=(BigInteger& val);
-    BigInteger operator/=(BigInteger& val);
-    BigInteger operator%=(BigInteger& val);
+    const BigInteger operator+=(const BigInteger& val);
+    const BigInteger operator-=(const BigInteger& val);
+    const BigInteger operator*=(const BigInteger& val);
+    const BigInteger operator/=(const BigInteger& val);
+    const BigInteger operator%=(const BigInteger& val);
 
-    bool operator <=(BigInteger& val);
-    bool operator >=(BigInteger& val);
+    const bool operator <=(const BigInteger& val);
+    const bool operator >=(const BigInteger& val);
 
-    int operator+(int& val);
-    int operator-(int& val);
-    int operator*(int& val);
-    int operator/(int& val);
-    int operator%(int& val);
+    const int operator+(const int& val);
+    const int operator-(const int& val);
+    const int operator*(const int& val);
+    const int operator/(const int& val);
+    const int operator%(const int& val);
 
-    bool operator <(int& val);
-    bool operator >(int& val);
-    bool operator ==(int& val);
+    const int operator+=(const int& val);
+    const int operator-=(const int& val);
+    const int operator*=(const int& val);
+    const int operator/=(const int& val);
+    const int operator%=(const int& val);
 
-    int operator+=(int& val);
-    int operator-=(int& val);
-    int operator*=(int& val);
-    int operator/=(int& val);
-    int operator%=(int& val);
+    const bool operator <(const int& val);
+    const bool operator >(const int& val);
+    const bool operator ==(const int& val);
 
-    bool operator <=(int& val);
-    bool operator >=(int& val);
+    const bool operator <=(const int& val);
+    const bool operator >=(const int& val);
 
-    void ToString();
+    std::string ToString();
 
-    friend std::ostream operator<<(std::ostream& out, const BigInteger& val);//??????????friend???
+    friend std::ostream operator<<(std::ostream& out, const BigInteger& val);
     friend std::istream& operator>>(std::istream& in, const BigInteger& val);
     //Rule of Five
 };
-
-#endif
