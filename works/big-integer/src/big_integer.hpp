@@ -10,6 +10,9 @@ class BigInteger {
 private:
     std::vector<int> num;
     std::string str;//для >>
+
+    BigInteger toInt(BigInteger& val);// для >>
+
 public:
     BigInteger(const int& val);
     BigInteger(const std::string& str);
