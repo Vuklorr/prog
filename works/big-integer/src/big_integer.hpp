@@ -1,7 +1,8 @@
 #pragma once
 
 #include <vector>
-#include <string>
+#include <ostream>
+#include <iostream>
 
 class BigInteger {
 private:
@@ -59,15 +60,15 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& out, const BigInteger& val) {
-    /*for(int i = val.num.size() - 1; i >= 0; --i) {
+    for(int i = val.num.size() - 1; i >= 0; --i) {
         out << val.num[i];
     }
-    return out;*/ //не работает
+    return out;
 }
 
 std::istream& operator>>(std::istream& in, BigInteger& val) {
     /*for (auto i : val.num) {
         in >> val;
     }
-    return in;*/ //тоже не работает, но страшнее
+    return in;*/ //не работает, но компилируется
 }
