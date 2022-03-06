@@ -3,32 +3,32 @@
 #include <vector>
 #include <ostream>
 #include <iostream>
-#include <string>
+#include <string_view>
 #include <istream>
+#include <string>
 
 class BigInteger {
 private:
     std::vector<int> num;
-    std::string str;//для >>
 
-    BigInteger toInt(BigInteger& val);// для >>
+    BigInteger toInt(std::string& val);
 
 public:
     BigInteger();
     BigInteger(const int& val);
-    BigInteger(const std::string& str);
+    BigInteger(const std::string_view& str);
 
     BigInteger operator+(const BigInteger& val) const;
     BigInteger operator-(const BigInteger& val) const;
     BigInteger operator*(const BigInteger& val) const;
     BigInteger operator/(const BigInteger& val) const;
-    int operator%(const BigInteger& val) const;
+    BigInteger operator%(const BigInteger& val) const;
 
-    BigInteger operator+=(const BigInteger& val);
-    BigInteger operator-=(const BigInteger& val);
-    BigInteger operator*=(const BigInteger& val);
-    BigInteger operator/=(const BigInteger& val);
-    int operator%=(const BigInteger& val);
+    BigInteger& operator+=(const BigInteger& val);
+    BigInteger& operator-=(const BigInteger& val);
+    BigInteger& operator*=(const BigInteger& val);
+    BigInteger& operator/=(const BigInteger& val);
+    BigInteger& operator%=(const BigInteger& val);
 
     BigInteger operator+(const int& val) const;
     BigInteger operator-(const int& val) const;
@@ -36,11 +36,11 @@ public:
     BigInteger operator/(const int& val) const;
     int operator%(const int& val) const;
 
-    BigInteger operator+=(const int& val);
-    BigInteger operator-=(const int& val);
-    BigInteger operator*=(const int& val);
-    BigInteger operator/=(const int& val);
-    int operator%=(const int& val);
+    BigInteger& operator+=(const int& val);
+    BigInteger& operator-=(const int& val);
+    BigInteger& operator*=(const int& val);
+    BigInteger& operator/=(const int& val);
+    int& operator%=(const int& val);
 
     bool operator <(const BigInteger& val) const;
     bool operator >(const BigInteger& val) const;
