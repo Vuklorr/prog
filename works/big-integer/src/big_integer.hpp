@@ -14,6 +14,7 @@ private:
     BigInteger toInt(BigInteger& val);// для >>
 
 public:
+    BigInteger();
     BigInteger(const int& val);
     BigInteger(const std::string& str);
 
@@ -21,25 +22,25 @@ public:
     BigInteger operator-(const BigInteger& val) const;
     BigInteger operator*(const BigInteger& val) const;
     BigInteger operator/(const BigInteger& val) const;
-    BigInteger operator%(const BigInteger& val) const;
+    int operator%(const BigInteger& val) const;
 
     BigInteger operator+=(const BigInteger& val);
     BigInteger operator-=(const BigInteger& val);
     BigInteger operator*=(const BigInteger& val);
     BigInteger operator/=(const BigInteger& val);
-    BigInteger operator%=(const BigInteger& val);
+    int operator%=(const BigInteger& val);
 
     BigInteger operator+(const int& val) const;
     BigInteger operator-(const int& val) const;
     BigInteger operator*(const int& val) const;
     BigInteger operator/(const int& val) const;
-    BigInteger operator%(const int& val) const;
+    int operator%(const int& val) const;
 
     BigInteger operator+=(const int& val);
     BigInteger operator-=(const int& val);
     BigInteger operator*=(const int& val);
     BigInteger operator/=(const int& val);
-    BigInteger operator%=(const int& val);
+    int operator%=(const int& val);
 
     bool operator <(const BigInteger& val) const;
     bool operator >(const BigInteger& val) const;
