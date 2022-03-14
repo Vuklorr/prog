@@ -10,13 +10,13 @@
 class BigInteger {
 private:
     std::vector<int> num;
-    //BigInteger toInt(std::string& val);
+
 public:
     BigInteger();
     BigInteger(const int& val);
     BigInteger(const std::string_view& str);
     BigInteger(const BigInteger& object);
-    BigInteger(BigInteger&& object) noexcept;
+    BigInteger(BigInteger&& object);
 
     BigInteger operator+(const BigInteger& val) const;
     BigInteger operator-(const BigInteger& val) const;
