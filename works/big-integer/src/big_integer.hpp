@@ -11,12 +11,12 @@ class BigInteger {
 private:
     std::vector<int> num;
 
-    BigInteger toInt(std::string& val);
-
 public:
     BigInteger();
     BigInteger(const int& val);
     BigInteger(const std::string_view& str);
+    BigInteger(const BigInteger& object);
+    BigInteger(BigInteger&& object);
 
     BigInteger operator+(const BigInteger& val) const;
     BigInteger operator-(const BigInteger& val) const;
@@ -59,11 +59,16 @@ public:
     BigInteger operator+() const;
     BigInteger operator-() const;
 
+    BigInteger& operator=(const BigInteger& object);
+    BigInteger& operator=(BigInteger&& object);
+
     std::string ToString() const;
 
     friend std::ostream& operator<<(std::ostream& out, const BigInteger& val);
     friend std::istream& operator>>(std::istream& in, BigInteger& val);
-    //Rule of Five
+
+    ~BigInteger();
+
 };
 
 std::ostream& operator<<(std::ostream& out, const BigInteger& val);
